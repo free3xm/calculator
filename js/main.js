@@ -24,16 +24,16 @@ document.addEventListener("DOMContentLoaded", function(){
     };
     function moveTo(x, y){
       calculator.style.left = x - event.layerX +"px";
-      calculator.style.top = y - event.layerY  +"px";
+      calculator.style.top = y - event.layerY - 40  +"px";
       console.log(event, x);
     }
     function mouseMove(event){
       moveTo(event.pageX, event.pageY);
     }
     document.addEventListener("mousemove", mouseMove);
-    header.onmouseup = function(){
+    document.onmouseup = function(){
       document.removeEventListener("mousemove", mouseMove);
-      header.onmouseup = null;
+      document.onmouseup = null;
     };
   });
 
